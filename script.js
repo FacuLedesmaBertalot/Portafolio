@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------
   //  MANTENER POSICIÓN DE SCROLL AL CAMBIAR IDIOMA
   // ------------------------------------
-
   const scrollPosition = sessionStorage.getItem("scrollPosition");
   if (scrollPosition) {
     window.scrollTo(0, parseInt(scrollPosition));
@@ -75,4 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = url.toString();
     });
   });
+
+  // ------------------------------------
+  //  LIMPIAR ALERTAS DE LA URL (CONTACTO)
+  // ------------------------------------
+  if (window.history.replaceState) {
+    const currentUrl = new URL(window.location.href);
+    if (currentUrl.searchParams.has("status")) {
+      // Borramos el parámetro 'status' de la URL interna
+      currentUrl.searchParams.delete("status");
+      // Reemplazamos la URL visible en el navegador sin recargar la página
+      window.history.replaceState(null, null, currentUrl.toString());
+    }
+  }
+
 });
