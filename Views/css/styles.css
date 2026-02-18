@@ -65,7 +65,7 @@ html {
 
 .titulo {
     font-size: 5rem;
-    font-weight: 600;
+    font-weight: 700;
     border-bottom: 1px solid #dee2e6;
 }
 
@@ -97,20 +97,30 @@ html {
 }
 
 /* Pantallas medianas y pequeñas (Tablets para abajo) */
+/* Ajustes para pantallas chicas (Celulares) */
 @media (max-width: 768px) {
     .titulo {
-        font-size: 3.5rem; 
+        font-size: 2.5rem !important; /* Títulos más chicos en celu */
     }
-    .custom-nav {
-        font-size: 1.1rem; 
-        flex-wrap: wrap;
+    
+    header h1 {
+        font-size: 2.8rem !important;
     }
-    .custom-nav .nav-link {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
     }
-    .parrafo {
-        font-size: 1.2rem;
+
+    /* Hacer que las tarjetas no tengan tanto margen lateral */
+    .card {
+        margin-bottom: 15px;
+    }
+
+    /* Ajustar el padding de las secciones para que no sobre tanto espacio */
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
     }
 }
 
