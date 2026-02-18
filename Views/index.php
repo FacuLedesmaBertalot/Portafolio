@@ -58,7 +58,7 @@
       </div>
     </section>
 
-    <section id="projects" class="py-5 " data-aos="fade-up">
+<section id="projects" class="py-5 " data-aos="fade-up">
       <h2 class="display-5 mb-4">Proyectos destacados</h2>
       <div class="row gy-4">
         <?php
@@ -74,8 +74,21 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title"><?= $project['title'] ?></h5>
                 <p class="card-text"><?= $project['desc'] ?></p>
-                <p class="card-text"><small class="text-light"><strong>Tecnologías:</strong> <?= $project['tech'] ?></small></p>
-                <a href="proyecto.php?id=<?= $index ?>" class="btn btn-dark mt-auto">Más Info</a>
+                <p class="card-text mb-4"><small class="text-light"><strong>Tecnologías:</strong> <?= $project['tech'] ?></small></p>
+                
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                  
+                  <a href="proyecto.php?id=<?= $index ?>" class="btn btn-dark flex-grow-1">Más Info</a>
+                  
+                  <?php if (!empty($project['link_github']) && $project['link_github'] !== '#'): ?>
+                    <a href="<?= $project['link_github'] ?>" target="_blank" class="btn btn-outline-light flex-grow-1"><i class="bi bi-github"></i> Código</a>
+                  <?php endif; ?>
+                  
+                  <?php if (!empty($project['link_live']) && $project['link_live'] !== '#'): ?>
+                    <a href="<?= $project['link_live'] ?>" target="_blank" class="btn btn-primary flex-grow-1">Ver Demo</a>
+                  <?php endif; ?>
+
+                </div>
               </div>
             </div>
           </div>
