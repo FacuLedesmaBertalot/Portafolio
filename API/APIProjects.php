@@ -43,7 +43,7 @@ $projects = [
     "tech" => "HTML, CSS, JavaScript",
     "img" => "../assets/img/RegalRealty.png",
     "link_github" => "https://github.com/FacuLedesmaBertalot/directorioPaginaProgramacionEstatica",
-    "link_live" => "https://regalrealtyfin.netlify.app/"
+    "link_live" => "https://regalrealty.devledesmabertalot.com/"
   ]
 ];
 ?>
