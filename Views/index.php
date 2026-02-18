@@ -51,7 +51,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
     <a class="nav-link theme-text px-2 px-md-3 fw-medium" href="#projects"><?= $lang['nav_projects'] ?></a>
     <a class="nav-link theme-text px-2 px-md-3 fw-medium" href="#contact"><?= $lang['nav_contact'] ?></a>
 
-    <a href="../assets/docs/Facundo_Ledesma_CV.pdf" class="btn btn-outline-primary ms-3 ms-lg-4 d-none d-md-inline-block" download>
+    <a href="assets/docs/Facundo_Ledesma_CV.pdf" class="btn btn-outline-primary ms-3 ms-lg-4 d-none d-md-inline-block" download>
       <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
     </a>
 
