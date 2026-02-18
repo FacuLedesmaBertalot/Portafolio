@@ -2,14 +2,14 @@
 session_start();
 
 if (isset($_GET['lang'])) {
-    $idioma = $_GET['lang'];
-    $_SESSION['lang'] = $idioma;
+  $idioma = $_GET['lang'];
+  $_SESSION['lang'] = $idioma;
 } else {
-    $idioma = $_SESSION['lang'] ?? 'es';
+  $idioma = $_SESSION['lang'] ?? 'es';
 }
 
 if (!in_array($idioma, ['es', 'en'])) {
-    $idioma = 'es';
+  $idioma = 'es';
 }
 
 $lang = require_once __DIR__ . "/../Lang/" . $idioma . ".php";
@@ -51,7 +51,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
     <a class="nav-link theme-text px-2 px-md-3 fw-medium" href="#projects"><?= $lang['nav_projects'] ?></a>
     <a class="nav-link theme-text px-2 px-md-3 fw-medium" href="#contact"><?= $lang['nav_contact'] ?></a>
 
-    <a href="assets/docs/Facundo_Ledesma_CV.pdf" class="btn btn-outline-primary ms-3 ms-lg-4 d-none d-md-inline-block" download>
+    <a href="download.php" class="btn btn-outline-primary ms-3 ms-lg-4 d-none d-md-inline-block">
       <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
     </a>
 
