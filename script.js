@@ -54,16 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
   //  MANTENER POSICIÓN DE SCROLL AL CAMBIAR IDIOMA
   // ------------------------------------
 
-  // 1. Restaurar la posición del scroll si venimos de una recarga de idioma
   const scrollPosition = sessionStorage.getItem("scrollPosition");
   if (scrollPosition) {
-    // Hacemos el scroll de forma instantánea al cargar la página
     window.scrollTo(0, parseInt(scrollPosition));
-    // Limpiamos el dato para que no interfiera en recargas normales
     sessionStorage.removeItem("scrollPosition");
   }
 
-  // 2. Interceptar el clic en los botones de idioma
   const langButtons = document.querySelectorAll(".lang-btn");
   langButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -73,8 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const selectedLang = btn.getAttribute("data-lang");
 
-      // Usamos URLSearchParams para mantener cualquier otro parámetro
-      // y asegurar que recargue la página actual correctamente
       const url = new URL(window.location.href);
       url.searchParams.set("lang", selectedLang);
 
