@@ -1,21 +1,21 @@
 <?php
-// Lógica para el sistema de idiomas
 session_start();
 
-// Si se recibe un parámetro por URL (?lang=en), lo guardamos en la sesión
 if (isset($_GET['lang'])) {
-  $_SESSION['lang'] = $_GET['lang'];
+    $idioma = $_GET['lang'];
+    $_SESSION['lang'] = $idioma;
+} else {
+    $idioma = $_SESSION['lang'] ?? 'es';
 }
 
-// Por defecto, usamos español si no hay nada en la sesión
-$idioma = $_SESSION['lang'] ?? 'es';
+if (!in_array($idioma, ['es', 'en'])) {
+    $idioma = 'es';
+}
 
-// Requerimos el archivo de traducciones correspondiente
-$lang = require_once __DIR__ . "/../Lang/{$idioma}.php";
-
-// Requerimos tus proyectos
-require_once __DIR__ . '/../API/APIProjects.php';
+$lang = require_once __DIR__ . "/../Lang/" . $idioma . ".php";
+require_once __DIR__ . "/../API/APIProjects.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="<?= $idioma ?>" data-bs-theme="dark">
 
@@ -70,7 +70,7 @@ require_once __DIR__ . '/../API/APIProjects.php';
             <?= $lang['about_p2'] ?>
           </p>
 
-          <a href="../assets/docs/Facundo_Ledesma_CV_<?= $idioma ?>.pdf" class="btn btn-primary btn-lg shadow-sm d-md-none" download>
+          <a href="../assets/docs/Facundo_Ledesma_CV.pdf" class="btn btn-primary btn-lg shadow-sm d-md-none" download>
             <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf-fill ms-2"></i>
           </a>
         </div>
