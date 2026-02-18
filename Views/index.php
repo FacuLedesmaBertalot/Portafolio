@@ -75,8 +75,8 @@ require_once __DIR__ . "/../API/APIProjects.php";
     <section id="about" class="py-4 mt-2" data-aos="fade-up">
       <div class="row align-items-center mb-5">
         <div class="col-lg-8 pr-lg-5">
-          <h2 class="display-5 mb-4 fw-bold titulo border-bottom border-primary border-3 d-inline-block pb-2"><?= $lang['about_title'] ?></h2>
-          <p class="lead theme-text mb-3">
+          <h2 class="display-5 mb-4 border-bottom border-primary border-3 d-inline-block pb-2"><?= $lang['about_title'] ?></h2>
+          <p class="lead theme-text mb-2">
             <?= $lang['about_p1'] ?>
           </p>
           <p class="theme-text mb-4">
