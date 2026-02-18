@@ -30,7 +30,7 @@ return [
     'skill_1' => 'MVC Architecture',
     'skill_2' => 'Agile Methodologies',
     'skill_3' => 'Database Design',
-    'skill_4' => 'Technical English',
+    'skill_4' => 'English B1/B2',
     
     // Projects
     'projects_title' => 'Featured Projects',
@@ -42,6 +42,15 @@ return [
     
     // Contact & Footer
     'contact_title' => 'Contact',
+    'contact_subtitle' => 'I am always open to new professional opportunities and technical challenges. If you are looking to add an enthusiastic developer to your team, I would be glad to connect.',
+    'contact_label_name' => 'Name or Company',
+    'contact_ph_name' => 'E.g. John Doe',
+    'contact_label_email' => 'Email address',
+    'contact_ph_email' => 'youremail@company.com',
+    'contact_label_msg' => 'Message',
+    'contact_ph_msg' => 'Tell me about your project, job offer, or inquiry...',
+    'contact_btn_send' => 'Send Message',
+
     'footer_text' => 'Made with'
 ];
 

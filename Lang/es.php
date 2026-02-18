@@ -30,7 +30,7 @@ return [
     'skill_1' => 'Arquitectura MVC',
     'skill_2' => 'Metodologías Ágiles',
     'skill_3' => 'Diseño de Base de Datos',
-    'skill_4' => 'Inglés Técnico',
+    'skill_4' => 'Inglés B1/B2',
     
     // Proyectos
     'projects_title' => 'Proyectos destacados',
@@ -42,6 +42,16 @@ return [
     
     // Contacto & Footer
     'contact_title' => 'Contacto',
+    'contact_subtitle' => 'Siempre estoy abierto a nuevas oportunidades laborales y desafíos técnicos. Si buscás sumar un desarrollador entusiasta a tu equipo, estaré encantado de conversar.',
+    'contact_label_name' => 'Nombre o Empresa',
+    'contact_ph_name' => 'Ej: Juan Pérez',
+    'contact_label_email' => 'Correo electrónico',
+    'contact_ph_email' => 'tucorreo@empresa.com',
+    'contact_label_msg' => 'Mensaje',
+    'contact_ph_msg' => 'Contame sobre tu proyecto, oferta laboral o consulta...',
+    'contact_btn_send' => 'Enviar Mensaje',
+
+
     'footer_text' => 'Hecho con'
 ];
 
