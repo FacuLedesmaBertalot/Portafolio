@@ -51,6 +51,10 @@ return [
     'contact_ph_msg' => 'Tell me about your project, job offer, or inquiry...',
     'contact_btn_send' => 'Send Message',
 
+    // Modal
+    'alert_success' => 'Message sent successfully! I will reply to you soon.',
+    'alert_error' => 'There was an error sending the message. Please check your connection.',
+    
     'footer_text' => 'Made with'
 ];
 

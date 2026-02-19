@@ -51,6 +51,10 @@ return [
     'contact_ph_msg' => 'Contame sobre tu proyecto, oferta laboral o consulta...',
     'contact_btn_send' => 'Enviar Mensaje',
 
+    // Modal
+    'alert_success' => '¡Mensaje enviado con éxito! Te responderé pronto.',
+    'alert_error' => 'Hubo un error al enviar el mensaje. Revisá tu conexión.',
+
 
     'footer_text' => 'Hecho con'
 ];
