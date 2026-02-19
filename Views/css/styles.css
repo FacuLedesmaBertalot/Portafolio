@@ -63,6 +63,10 @@ html {
   color: #ffffff;
 }
 
+[data-bs-theme="light"] .navbar-toggler-icon {
+  filter: invert(1); /* Convierte el ícono blanco en negro */
+}
+
 .titulo {
   font-size: 5rem;
   font-weight: 700;
@@ -120,10 +124,10 @@ html {
 /* Pantallas muy pequeñas (Celulares) */
 @media (max-width: 576px) {
   .titulo {
-    font-size: 2.2rem !important;
+    font-size: 2.8rem !important; /* Aumentamos el tamaño de tu nombre */
   }
   header h1.display-2 {
-    font-size: 2.6rem !important;
+    font-size: 3rem !important; /* Tu nombre resalta mucho más */
   }
   header .lead {
     font-size: 1.1rem;
@@ -152,7 +156,7 @@ html {
 
 /* Ícono decorativo gigante en sección About */
 .hero-icon-bg {
-  font-size: 10rem;
+  font-size: 14rem !important; /* Agrandado de 10 a 14rem */
   opacity: 0.8;
 }
 
@@ -173,10 +177,10 @@ html {
 }
 
 /* ==========================================
-   NUEVO: AJUSTE PARA TÍTULOS DENTRO DE CARDS
+   AJUSTE PARA TÍTULOS DENTRO DE CARDS
    ========================================== */
 .card .titulo {
-  font-size: 4rem !important; 
+  font-size: 3rem !important;
   word-wrap: break-word;        
   overflow-wrap: break-word;    
   white-space: normal;
@@ -185,6 +189,6 @@ html {
 
 @media (max-width: 768px) {
   .card .titulo {
-    font-size: 3rem !important; 
+    font-size: 2.5rem !important;
   }
 }
