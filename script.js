@@ -1,7 +1,14 @@
+// RECUPERAR SCROLL SIN PANTALLAZO 
+const savedScroll = sessionStorage.getItem("scrollPosition");
+if (savedScroll) {
+  window.scrollTo(0, parseInt(savedScroll));
+  sessionStorage.removeItem("scrollPosition");
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  // ------------------------------------
-  //  MANEJO DEL TEMA (CLARO/OSCURO)
-  // ------------------------------------
+  
+  // MANEJO DEL TEMA (CLARO/OSCURO)
   const themeToggle = document.getElementById("theme-toggle");
   const htmlElement = document.documentElement;
   const moonIcon = '<i class="bi bi-moon-fill"></i>';
@@ -22,9 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme") || "dark";
   applyTheme(savedTheme);
 
-  // ------------------------------------
-  //  LÓGICA VER MÁS/MENOS PROYECTOS
-  // ------------------------------------
+
+  // LÓGICA VER MÁS/MENOS PROYECTOS
   const setupProjectToggle = () => {
     const showMoreBtn = document.getElementById("show-more-projects");
     const hideBtn = document.getElementById("hide-projects");
@@ -50,15 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupProjectToggle();
 
-  // ------------------------------------
-  //  MANTENER POSICIÓN DE SCROLL AL CAMBIAR IDIOMA
-  // ------------------------------------
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
-  if (scrollPosition) {
-    window.scrollTo(0, parseInt(scrollPosition));
-    sessionStorage.removeItem("scrollPosition");
-  }
 
+  // GUARDAR POSICIÓN AL CAMBIAR IDIOMA
   const langButtons = document.querySelectorAll(".lang-btn");
   langButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("scrollPosition", window.scrollY);
 
       const selectedLang = btn.getAttribute("data-lang");
-
       const url = new URL(window.location.href);
       url.searchParams.set("lang", selectedLang);
 
@@ -75,15 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ------------------------------------
-  //  LIMPIAR ALERTAS DE LA URL (CONTACTO)
-  // ------------------------------------
+  
+  // LIMPIAR ALERTAS DE LA URL (CONTACTO)
   if (window.history.replaceState) {
     const currentUrl = new URL(window.location.href);
     if (currentUrl.searchParams.has("status")) {
-      // Borramos el parámetro 'status' de la URL interna
       currentUrl.searchParams.delete("status");
-      // Reemplazamos la URL visible en el navegador sin recargar la página
       window.history.replaceState(null, null, currentUrl.toString());
     }
   }
