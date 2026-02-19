@@ -1,150 +1,144 @@
 html {
-    scroll-padding-top: 100px; 
-    scroll-behavior: smooth; 
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
 }
 
 /* Variables de color según el tema */
 [data-bs-theme="light"] {
-    --text-main: #212529;
-    --btn-outline: #212529;
-    --btn-text: #212529;
-    --btn-hover-bg: #212529;
-    --btn-hover-text: #ffffff;
+  --text-main: #212529;
+  --btn-outline: #212529;
+  --btn-text: #212529;
+  --btn-hover-bg: #212529;
+  --btn-hover-text: #ffffff;
 }
 
 [data-bs-theme="dark"] {
-    --text-main: #f8f9fa;
-    --btn-outline: #f8f9fa;
-    --btn-text: #f8f9fa;
-    --btn-hover-bg: #f8f9fa;
-    --btn-hover-text: #212529;
+  --text-main: #f8f9fa;
+  --btn-outline: #f8f9fa;
+  --btn-text: #f8f9fa;
+  --btn-hover-bg: #f8f9fa;
+  --btn-hover-text: #212529;
 }
 
 /* Botón de código personalizado */
 .btn-outline-theme {
-    color: var(--btn-text);
-    border-color: var(--btn-outline);
-    background-color: transparent;
-    transition: all 0.3s ease;
+  color: var(--btn-text);
+  border-color: var(--btn-outline);
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .btn-outline-theme:hover {
-    background-color: var(--btn-hover-bg);
-    color: var(--btn-hover-text);
-    border-color: var(--btn-outline);
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+  border-color: var(--btn-outline);
 }
 
 /* Iconos de contacto y textos generales */
-.theme-text, 
-#contact a, 
+.theme-text,
+#contact a,
 #contact i,
 .titulo {
-    color: var(--text-main) !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--text-main) !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* Forzar que las tarjetas se adapten al tema de Bootstrap */
 [data-bs-theme="light"] .card {
-    background-color: #ffffff !important;
-    border-color: #dee2e6 !important;
-    color: #212529;
+  background-color: #ffffff !important;
+  border-color: #dee2e6 !important;
+  color: #212529;
 }
 
-[data-bs-theme="light"] .card-text, 
+[data-bs-theme="light"] .card-text,
 [data-bs-theme="light"] .card-title,
 [data-bs-theme="light"] .text-light {
-    color: #212529 !important;
+  color: #212529 !important;
 }
 
 [data-bs-theme="dark"] .card {
-    background-color: #212529 !important;
-    border-color: #495057 !important;
-    color: #ffffff;
+  background-color: #212529 !important;
+  border-color: #495057 !important;
+  color: #ffffff;
 }
 
 .titulo {
-    font-size: 5rem;
-    font-weight: 700;
-    border-bottom: 1px solid #dee2e6;
+  font-size: 5rem;
+  font-weight: 700;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .custom-nav {
-    font-size: 1.4rem;
-    font-weight: 600;
-    background-color: var(--card-bg); 
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 1030; 
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--card-border);
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 1030;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .parrafo {
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Pantallas medianas y pequeñas (Tablets para abajo) */
-/* Ajustes para pantallas chicas (Celulares) */
+/* ==========================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================== */
+
+/* Pantallas medianas (Tablets para abajo) */
 @media (max-width: 768px) {
-    .titulo {
-        font-size: 2.5rem !important; /* Títulos más chicos en celu */
-    }
-    
-    header h1 {
-        font-size: 2.8rem !important;
-    }
-
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Hacer que las tarjetas no tengan tanto margen lateral */
-    .card {
-        margin-bottom: 15px;
-    }
-
-    /* Ajustar el padding de las secciones para que no sobre tanto espacio */
-    section {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-    }
+  .titulo {
+    font-size: 3rem !important;
+  }
+  header h1.display-2 {
+    font-size: 3.5rem !important;
+  }
+  .card {
+    margin-bottom: 15px;
+  }
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
 }
 
 /* Pantallas muy pequeñas (Celulares) */
 @media (max-width: 576px) {
-    .titulo {
-        font-size: 2.8rem; 
-    }
-    header .display-2 {
-        font-size: 2.5rem;
-    }
-    header .lead {
-        font-size: 1.1rem;
-    }
-    
+  .titulo {
+    font-size: 2.2rem !important;
+  }
+  header h1.display-2 {
+    font-size: 2.6rem !important;
+  }
+  header .lead {
+    font-size: 1.1rem;
+  }
 
-    .custom-nav .d-flex {
-        width: 100%;
-        justify-content: center;
-        border-right: none !important;
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0.5rem;
-    }
+  /* Arreglo vital para el menú (Navbar) en celular */
+  .custom-nav .lang-divider {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  /* Pequeño ajuste visual para que las skills no queden tan pegadas */
+  .badge {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* ==========================================
@@ -153,27 +147,44 @@ html {
 
 /* Separador del selector de idiomas */
 .lang-divider {
-    border-color: var(--card-border) !important;
+  border-color: var(--card-border) !important;
 }
 
 /* Ícono decorativo gigante en sección About */
 .hero-icon-bg {
-    font-size: 10rem;
-    opacity: 0.8;
+  font-size: 10rem;
+  opacity: 0.8;
 }
 
 /* Ancho máximo para las alertas de envío de correo */
 .alert-contact {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 /* Inputs y Textarea del formulario de contacto */
 .custom-input {
-    border-color: var(--card-border) !important;
+  border-color: var(--card-border) !important;
 }
 
 /* Efecto focus para que los inputs no pierdan estilo al escribir */
 .custom-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: var(--bs-primary) !important;
+}
+
+/* ==========================================
+   NUEVO: AJUSTE PARA TÍTULOS DENTRO DE CARDS
+   ========================================== */
+.card .titulo {
+  font-size: 4rem !important; 
+  word-wrap: break-word;        
+  overflow-wrap: break-word;    
+  white-space: normal;
+  border-bottom: none; 
+}
+
+@media (max-width: 768px) {
+  .card .titulo {
+    font-size: 3rem !important; 
+  }
 }
