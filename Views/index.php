@@ -31,17 +31,17 @@ require_once __DIR__ . "/../API/APIProjects.php";
 
 <body class="data-bs-theme">
 
-  <header class="container text-center py-4 position-relative">
+  <header class="container text-center py-4 pt-5 position-relative">
     <button id="theme-toggle" class="btn btn-outline-secondary position-absolute top-0 end-0 mt-3 me-3">
     </button>
-    <h1 class="display-2 titulo mt-4 fs-1-sm">Facundo Ledesma</h1>
+    <h1 class="display-2 titulo mt-5 mt-md-4 fs-1-sm">Facundo Ledesma</h1>
     <p class="lead"><?= $lang['hero_subtitle'] ?></p>
   </header>
 
   <nav class="navbar navbar-expand-md sticky-top custom-nav navbar-dark">
-    <div class="container justify-content-center">
+    <div class="container d-flex justify-content-between align-items-center">
 
-      <div class="d-flex align-items-center me-3 border-end pe-3 lang-divider">
+      <div class="d-flex align-items-center lang-divider pe-2 pe-md-3">
         <button data-lang="es" class="lang-btn btn btn-link p-0 text-decoration-none fw-bold <?= $idioma === 'es' ? 'text-primary' : 'theme-text opacity-50' ?>">ES</button>
         <span class="mx-2 theme-text opacity-50">/</span>
         <button data-lang="en" class="lang-btn btn btn-link p-0 text-decoration-none fw-bold <?= $idioma === 'en' ? 'text-primary' : 'theme-text opacity-50' ?>">EN</button>
@@ -51,12 +51,13 @@ require_once __DIR__ . "/../API/APIProjects.php";
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
+      <div class="collapse navbar-collapse justify-content-md-end justify-content-center" id="navbarNav">
+        <ul class="navbar-nav align-items-center text-center mt-3 mt-md-0">
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#about"><?= $lang['nav_about'] ?></a></li>
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#projects"><?= $lang['nav_projects'] ?></a></li>
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#contact"><?= $lang['nav_contact'] ?></a></li>
-          <li class="nav-item d-md-none mt-3">
+          
+          <li class="nav-item d-md-none mt-3 mb-2 w-100 px-3">
             <a href="download.php" class="btn btn-primary w-100">
               <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
             </a>
@@ -236,7 +237,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
 
     <section id="contact" class="py-5 text-center" data-aos="fade-up">
       <h2 class="display-5 mb-3 border-bottom border-primary border-3 d-inline-block pb-2"><?= $lang['contact_title'] ?></h2>
-      
+
       <p class="lead theme-text mb-4 opacity-75 mx-auto" style="max-width: 700px;">
         <?= $lang['contact_subtitle'] ?>
       </p>
@@ -262,17 +263,17 @@ require_once __DIR__ . "/../API/APIProjects.php";
                 <label for="nombre" class="form-label theme-text fw-bold"><?= $lang['contact_label_name'] ?></label>
                 <input type="text" class="form-control bg-transparent theme-text custom-input" id="nombre" name="nombre" placeholder="<?= $lang['contact_ph_name'] ?>" required>
               </div>
-              
+
               <div class="mb-3 text-start">
                 <label for="email" class="form-label theme-text fw-bold"><?= $lang['contact_label_email'] ?></label>
                 <input type="email" class="form-control bg-transparent theme-text custom-input" id="email" name="email" placeholder="<?= $lang['contact_ph_email'] ?>" required>
               </div>
-              
+
               <div class="mb-4 text-start">
                 <label for="mensaje" class="form-label theme-text fw-bold"><?= $lang['contact_label_msg'] ?></label>
                 <textarea class="form-control bg-transparent theme-text custom-input" id="mensaje" name="mensaje" rows="4" placeholder="<?= $lang['contact_ph_msg'] ?>" required></textarea>
               </div>
-              
+
               <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
                 <?= $lang['contact_btn_send'] ?> <i class="bi bi-send ms-2"></i>
               </button>
