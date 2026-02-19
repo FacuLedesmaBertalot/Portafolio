@@ -56,7 +56,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#about"><?= $lang['nav_about'] ?></a></li>
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#projects"><?= $lang['nav_projects'] ?></a></li>
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#contact"><?= $lang['nav_contact'] ?></a></li>
-          
+
           <li class="nav-item d-md-none mt-3 mb-2 w-100 px-3">
             <a href="download.php" class="btn btn-primary w-100">
               <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
@@ -244,12 +244,12 @@ require_once __DIR__ . "/../API/APIProjects.php";
 
       <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
         <div class="alert alert-success alert-dismissible fade show mx-auto mb-4 alert-contact" role="alert">
-          <i class="bi bi-check-circle-fill me-2"></i> ¡Mensaje enviado con éxito! Te responderé pronto.
+          <i class="bi bi-check-circle-fill me-2"></i> <?= $lang['alert_success'] ?>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <?php elseif (isset($_GET['status']) && $_GET['status'] == 'error'): ?>
         <div class="alert alert-danger alert-dismissible fade show mx-auto mb-4 alert-contact" role="alert">
-          <i class="bi bi-exclamation-triangle-fill me-2"></i> Hubo un error al enviar el mensaje. Revisá tu conexión.
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> <?= $lang['alert_error'] ?>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <?php endif; ?>
