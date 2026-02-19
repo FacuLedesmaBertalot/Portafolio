@@ -31,10 +31,10 @@ require_once __DIR__ . "/../API/APIProjects.php";
 
 <body class="data-bs-theme">
 
-  <header class="container text-center py-4 pt-5 position-relative">
+  <header class="container text-center py-3 pt-4 position-relative">
     <button id="theme-toggle" class="btn btn-outline-secondary position-absolute top-0 end-0 mt-3 me-3">
     </button>
-    <h1 class="display-2 titulo mt-5 mt-md-4 fs-1-sm">Facundo Ledesma</h1>
+    <h1 class="display-2 titulo mt-4 mt-md-4 fs-1-sm">Facundo Ledesma</h1>
     <p class="lead"><?= $lang['hero_subtitle'] ?></p>
   </header>
 
