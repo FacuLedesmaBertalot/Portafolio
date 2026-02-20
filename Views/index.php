@@ -26,7 +26,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <link rel="stylesheet" href="/Views/css/styles.css?v=2.0">
 </head>
 
@@ -59,14 +59,14 @@ require_once __DIR__ . "/../API/APIProjects.php";
           <li class="nav-item"><a class="nav-link theme-text px-3 fw-medium" href="#contact"><?= $lang['nav_contact'] ?></a></li>
 
           <li class="nav-item d-md-none mt-3 mb-2 w-100 px-3">
-            <a href="download.php" class="btn btn-primary w-100">
+            <a href="../download.php" class="btn btn-primary w-100">
               <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
             </a>
           </li>
         </ul>
       </div>
 
-      <a href="download.php" class="btn btn-outline-primary ms-lg-4 d-none d-md-inline-block">
+      <a href="../download.php" class="btn btn-outline-primary ms-lg-4 d-none d-md-inline-block">
         <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf"></i>
       </a>
     </div>
@@ -85,8 +85,7 @@ require_once __DIR__ . "/../API/APIProjects.php";
             <?= $lang['about_p2'] ?>
           </p>
 
-          <a href="download.php"
-            class="btn btn-primary btn-lg shadow-sm d-md-none">
+          <a href="../download.php" class="btn btn-primary btn-lg shadow-sm d-md-none">
             <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf-fill ms-2"></i>
           </a>
 
@@ -174,141 +173,15 @@ require_once __DIR__ . "/../API/APIProjects.php";
             </div>
           </div>
         </div>
-
       </div>
+      </section>
 
-      <div class="row text-center mt-5" data-aos="fade-up" data-aos-delay="300">
-        <div class="col-12">
-          <h4 class="mb-4 titulo"><?= $lang['skills_title'] ?></h4>
-          <div class="d-flex flex-wrap justify-content-center gap-2">
-            <span class="badge border border-secondary text-secondary p-2 px-3 fs-6 rounded-pill"><?= $lang['skill_1'] ?></span>
-            <span class="badge border border-secondary text-secondary p-2 px-3 fs-6 rounded-pill"><?= $lang['skill_2'] ?></span>
-            <span class="badge border border-secondary text-secondary p-2 px-3 fs-6 rounded-pill"><?= $lang['skill_3'] ?></span>
-            <span class="badge border border-secondary text-secondary p-2 px-3 fs-6 rounded-pill"><?= $lang['skill_4'] ?></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="py-5" data-aos="fade-up">
-      <h2 class="display-5 mb-4 border-bottom border-primary border-3 d-inline-block pb-2"><?= $lang['projects_title'] ?></h2>
-      <div class="row gy-4 mt-2">
-        <?php
-        $max_visible = 3;
-        $total_projects = count($projects);
-
-        foreach ($projects as $index => $project):
-          $card_classes = ($index >= $max_visible) ? 'd-none extra-project' : '';
-        ?>
-          <div class="col-md-6 col-lg-4 <?= $card_classes; ?>" data-aos="fade-up">
-            <div class="card h-100 shadow-sm">
-              <img src="<?= $project['img'] ?>" class="card-img-top" alt="<?= $project['title'] ?>">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title fw-bold"><?= $project['title'] ?></h5>
-                <p class="card-text"><?= $project['desc'] ?></p>
-                <p class="card-text mb-4"><small class="theme-text"><strong><?= $lang['projects_tech'] ?></strong> <?= $project['tech'] ?></small></p>
-
-                <div class="mt-auto d-flex flex-wrap gap-2">
-
-                  <?php if (!empty($project['link_github']) && $project['link_github'] !== '#'): ?>
-                    <a href="<?= $project['link_github'] ?>" target="_blank" class="btn btn-outline-theme flex-grow-1"><i class="bi bi-github"></i> <?= $lang['projects_btn_code'] ?></a>
-                  <?php endif; ?>
-
-                  <?php if (!empty($project['link_live']) && $project['link_live'] !== '#'): ?>
-                    <a href="<?= $project['link_live'] ?>" target="_blank" class="btn btn-primary flex-grow-1"><?= $lang['projects_btn_demo'] ?></a>
-                  <?php endif; ?>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-
-      <?php if ($total_projects > $max_visible): ?>
-        <div class="text-center mt-5">
-          <button id="show-more-projects" class="btn btn-outline-primary px-4 py-2">
-            <?= $lang['projects_btn_more'] ?> <i class="bi bi-arrow-down-circle ms-2"></i>
-          </button>
-
-          <button id="hide-projects" class="btn btn-outline-secondary px-4 py-2 d-none">
-            <?= $lang['projects_btn_less'] ?> <i class="bi bi-arrow-up-circle ms-2"></i>
-          </button>
-        </div>
-      <?php endif; ?>
-    </section>
-
-    <section id="contact" class="py-5 text-center" data-aos="fade-up">
-      <h2 class="display-5 mb-3 border-bottom border-primary border-3 d-inline-block pb-2"><?= $lang['contact_title'] ?></h2>
-
-      <p class="lead theme-text mb-4 opacity-75 mx-auto" style="max-width: 700px;">
-        <?= $lang['contact_subtitle'] ?>
-      </p>
-
-      <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
-        <div class="alert alert-success alert-dismissible fade show mx-auto mb-4 alert-contact" role="alert">
-          <i class="bi bi-check-circle-fill me-2"></i> <?= $lang['alert_success'] ?>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <?php elseif (isset($_GET['status']) && $_GET['status'] == 'error'): ?>
-        <div class="alert alert-danger alert-dismissible fade show mx-auto mb-4 alert-contact" role="alert">
-          <i class="bi bi-exclamation-triangle-fill me-2"></i> <?= $lang['alert_error'] ?>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <?php endif; ?>
-
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="shadow-sm border-0 p-4 bg-transparent">
-
-            <form action="../contacto.php" method="POST">
-              <div class="mb-3 text-start">
-                <label for="nombre" class="form-label theme-text fw-bold"><?= $lang['contact_label_name'] ?></label>
-                <input type="text" class="form-control bg-transparent theme-text custom-input" id="nombre" name="nombre" placeholder="<?= $lang['contact_ph_name'] ?>" required>
-              </div>
-
-              <div class="mb-3 text-start">
-                <label for="email" class="form-label theme-text fw-bold"><?= $lang['contact_label_email'] ?></label>
-                <input type="email" class="form-control bg-transparent theme-text custom-input" id="email" name="email" placeholder="<?= $lang['contact_ph_email'] ?>" required>
-              </div>
-
-              <div class="mb-4 text-start">
-                <label for="mensaje" class="form-label theme-text fw-bold"><?= $lang['contact_label_msg'] ?></label>
-                <textarea class="form-control bg-transparent theme-text custom-input" id="mensaje" name="mensaje" rows="4" placeholder="<?= $lang['contact_ph_msg'] ?>" required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
-                <?= $lang['contact_btn_send'] ?> <i class="bi bi-send ms-2"></i>
-              </button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    </main>
 
   <footer class="text-center py-3 mt-2 border-top">
-    <div class="container">
+    </footer>
 
-      <div class="d-flex justify-content-center gap-4 fs-2">
-        <a href="https://github.com/FacuLedesmaBertalot" target="_blank" class="theme-text transition-hover" aria-label="GitHub">
-          <i class="bi bi-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/facundo-ledesma-23737b185/" target="_blank" class="theme-text transition-hover" aria-label="LinkedIn">
-          <i class="bi bi-linkedin"></i>
-        </a>
-      </div>
-
-      <p class="mb-0 theme-text opacity-75 small">
-        © 2026 Facundo Ledesma | <?= $lang['footer_text'] ?> <i class="bi bi-laptop"></i> y <i class="bi bi-cup-hot-fill"></i>
-      </p>
-
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../script.js?v=2.0"></script>
   <script>
