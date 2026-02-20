@@ -1,5 +1,5 @@
 <?php
-$file = __DIR__ . '/../assets/docs/Facundo_Ledesma_CV.pdf';
+$file = __DIR__ . '/download.php';
 
 // Verificamos si el archivo existe físicamente en el servidor
 if (file_exists($file)) {
