@@ -85,9 +85,12 @@ require_once __DIR__ . "/../API/APIProjects.php";
             <?= $lang['about_p2'] ?>
           </p>
 
-          <a href="../assets/docs/Facundo_Ledesma_CV.pdf" class="btn btn-primary btn-lg shadow-sm d-md-none" download>
+          <a href="../assets/docs/Facundo_Ledesma_CV.pdf"
+            class="btn btn-primary btn-lg shadow-sm d-md-none"
+            download="Facundo_Ledesma_CV.pdf">
             <?= $lang['nav_download_cv'] ?> <i class="bi bi-file-earmark-pdf-fill ms-2"></i>
           </a>
+          
         </div>
 
         <div class="col-lg-4 d-none d-lg-block text-center mt-4 mt-lg-0">
